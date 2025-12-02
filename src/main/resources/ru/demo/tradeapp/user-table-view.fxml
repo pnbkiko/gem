@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="1000" minWidth="1000" prefHeight="1000" prefWidth="1000" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.demo.tradeapp.controller.UserTableViewController">
+    <children>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER_RIGHT">
+                    <items>
+                        <Separator halignment="LEFT" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="225.0" />
+                        <Label fx:id="LabelUser" prefWidth="120.0" text="Label" />
+                        <Button fx:id="BtnAdd" mnemonicParsing="false" onAction="#BtnAddAction" text="Добавить" />
+                        <Button fx:id="BtnUpdate" mnemonicParsing="false" onAction="#BtnUpdateAction" text="Изменить" />
+                        <Button fx:id="BtnDelete" mnemonicParsing="false" onAction="#BtnDeleteAction" text="Удалить" />
+                        <Button fx:id="BtnBack" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#BtnBackAction" text="Назад" textAlignment="RIGHT" />
+                    </items>
+                </ToolBar>
+            </top>
+            <center>
+                <BorderPane BorderPane.alignment="CENTER">
+                    <top>
+                        <FlowPane minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="200.0" rowValignment="TOP" BorderPane.alignment="CENTER">
+                            <children>
+                                <TextField fx:id="TextFieldSearch" onAction="#TextFieldSearchAction" onInputMethodTextChanged="#TextFieldTextChanged" prefHeight="25.0" prefWidth="262.0" promptText="Введите название для поиска" />
+                                <ComboBox fx:id="ComboBoxProductType" onAction="#ComboBoxProductTypeAction" prefWidth="150.0" promptText="тип продукта" />
+                                <ComboBox fx:id="ComboBoxDiscount" onAction="#ComboBoxDiscountAction" prefHeight="26.0" prefWidth="143.0" promptText="скидка" />
+                                <ComboBox fx:id="ComboBoxSort" onAction="#ComboBoxSortAction" prefWidth="150.0" promptText="сортировка" />
+                            </children>
+                        </FlowPane>
+                    </top>
+                    <center>
+                        <TableView fx:id="TableViewUser" fixedCellSize="120.0" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                            <columns>
+
+                                <TableColumn id="TableColumnFirstName" fx:id="TableColumnFirstName" maxWidth="1.7976931348623157E308" prefWidth="121.0" resizable="false" text="Имя" minWidth="150" />
+                                <TableColumn id="TableColumnSecondName" fx:id="TableColumnSecondName" maxWidth="1.7976931348623157E308" prefWidth="121.0" resizable="false" text="Фамилия" minWidth="150" />
+                                <TableColumn id="TableColumnMiddleName" fx:id="TableColumnMiddleName" maxWidth="1.7976931348623157E308" prefWidth="121.0" resizable="false" text="Отчество" minWidth="150" />
+                                <TableColumn id="TableColumnUsername" fx:id="TableColumnUsername" maxWidth="1.7976931348623157E308" prefWidth="121.0" resizable="false" text="Никнейм" minWidth="150" />
+                                <TableColumn id="TableColumnPassword" fx:id="TableColumnPassword" maxWidth="1.7976931348623157E308" prefWidth="121.0" resizable="false" text="Пароль" minWidth="150" />
+                                <TableColumn id="TableColumnRole" fx:id="TableColumnRole" maxWidth="1.7976931348623157E308" prefWidth="121.0" resizable="false" text="Роль" minWidth="400" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+            </center>
+            <bottom>
+                <Label fx:id="LabelInfo" text="Label" BorderPane.alignment="CENTER_LEFT" />
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>
